@@ -1,28 +1,8 @@
-hello git! hello study!  6666666
-hello git! hello study!  
-hello git! hello study!  6666666
-hello git! hello study!  6666666
-hello git! hello study!  6666666
-hello！a  88888
-hello！a  88888
-hello！a  88888
-hello！a  88888
-hello！a  88888
-hello！a  88888
-hello！a  88888
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a
-hello！a master edit
-hello！a dev master
-hello！a
+hello git! hello study!
+git add        =》“添加到暂存区”
+git commit -m "提交信息" hello.java  =》 添加文件到本地库
+git checkout dev   => 切换分支
+git branch uat => 在当前版本上创建新的分支
+git reflog  => 查看提交日志， 提交版本号
+git log   => 查看提交信息， 提交人提交文件， 提交时间
+git merge dev => 合并分支， 把dev代码分支 合并到当前分支上。 不会影响dev分支代码git status => 查看当前分支状态
