@@ -38,12 +38,10 @@ public class Rotate {
                 tmp3[i - t] = nums[i];
             }
         }
-        System.out.println("------------");
-
+      
         for (int num : tmp3) {
             System.out.print(num);
         }
-        System.out.println("------------");
     }
 
 }
