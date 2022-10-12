@@ -39,10 +39,11 @@ public class Rotate {
             }
         }
         System.out.println("------------");
+
         for (int num : tmp3) {
             System.out.print(num);
         }
-
+        System.out.println("------------");
     }
 
 }
