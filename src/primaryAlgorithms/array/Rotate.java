@@ -42,6 +42,7 @@ public class Rotate {
         for (int num : tmp3) {
             System.out.print(num);
         }
+        System.out.println("------------");
     }
 
 }
