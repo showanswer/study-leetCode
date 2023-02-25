@@ -32,6 +32,30 @@ public class CountAndSay {
      * 若当前不满足，则将上次的值记录下，并重置计数器，重置需要判断是否重复的字符
      * 将最后的结果也追加到字符串上
      */
+    public String countAndSay2(int n) {
+        if (n ==1) {
+            return "1";
+        }
+        String s1 =countAndSay2(n-1);
+        StringBuilder res = new StringBuilder();
+        char local = s1.charAt(0);
+        int count =1;
+        for (int i = 1; i < s1.length(); i++) {
+            if (s1.charAt(i) == local) {
+                count++;
+            } else {
+                res.append(count);
+                res.append(local);
+                count =1;
+                local = s1.charAt(i);
+            }
+        }
+        res.append(count);
+        res.append(local);
+        return res.toString();
+    }
+
+
     public String countAndSay(int n) {
         if (n==1) {
             return "1";

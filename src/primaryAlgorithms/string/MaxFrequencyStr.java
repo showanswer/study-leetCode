@@ -17,7 +17,7 @@ public class MaxFrequencyStr {
      */
     public static void main(String[] args) {
         MaxFrequencyStr test = new MaxFrequencyStr();
-        int num = test.maxFrequencyStr("aabbcde");
+        int num = test.maxFrequencyStr2("aabbcde");
         System.out.println(num);
     }
 
@@ -27,6 +27,17 @@ public class MaxFrequencyStr {
      * @return
      * 思路： 利用hashMap 进行存储， key为字符， value为出现的次数
      */
+    public int maxFrequencyStr2(String str) {
+        HashMap<Character, Integer > map = new HashMap<>();
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            map.put(chars[i], map.getOrDefault(chars[i], 0)+1);
+        }
+        Integer integer = map.values().stream().max(Integer::compareTo).get();
+        return integer;
+
+    }
+
     public int maxFrequencyStr(String str) {
         HashMap<Character, Integer > map = new HashMap<>();
         char[] chars = str.toCharArray();

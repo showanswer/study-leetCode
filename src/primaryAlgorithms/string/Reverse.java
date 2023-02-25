@@ -25,6 +25,19 @@ public class Reverse {
      * @return
      * 思路： 通过除十求余得到末尾的值
      */
+    public int reverse2(int x) {
+        int res=0;
+        while (x!=0) {
+            int re = x%10;
+            res = res*10 +re;
+            if (res%10 != re) {
+                res = 0;
+            }
+            x = x/10;
+        }
+        return res;
+    }
+
     public int reverse(int x) {
         int res=0;
         while (x!=0) {

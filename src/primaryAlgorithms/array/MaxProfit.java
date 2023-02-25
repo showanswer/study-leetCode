@@ -29,6 +29,26 @@ public class MaxProfit {
      * @return 思路： 只能持有 或者不持有 把每天持有的情况和不持有的情况 都进行计算。 每天都取最大利润
      *  由于我们已经能够提前知道每一天股票的价格，那么只要判断出来后一天的价钱比前一天的高，那么我们就执行这次买卖操作，并记录获得的收益。
      */
+    public int maxProfit2(int[] prices) {
+        int length = prices.length;
+        if (length<2 || prices == null) {
+            return 0;
+        }
+
+        int[][] left = new int[length][2];
+        int[][] right = new int[length][2];
+        left[0][0] = 0;
+        right[0][1] = -prices[0];
+
+        for (int i = 1; i < length; i++) {
+           // 第1+n天不持有分两种情况 (前一天不持有，今天也不持有 或者 前一天持有， 今卖掉了)
+            left[i][0] = Math.max(left[i-1][0], right[i-1][1]+prices[i]);
+            //前一持有，今不卖 或者 前一天不持有， 今天买入
+            right[i][1] = Math.max(right[i-1][1], left[i-1][0]-prices[i]);
+        }
+        return Math.max(left[length-1][0], right[length-1][1]);
+    }
+
     public int maxProfit(int[] prices) {
         int length = prices.length;
         if (prices == null || prices.length < 2) {

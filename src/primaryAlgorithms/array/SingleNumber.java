@@ -30,6 +30,15 @@ public class SingleNumber {
      * @return
      * 思路1： 判断某个字符只出现一次， 可以haspMap key为字符， value为出现的次数
      */
+    public int singleNumber2(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!set.add(nums[i])) {
+                set.remove(nums[i]);
+            }
+        }
+        return (Integer) set.toArray()[0];
+    }
     public int singleNumber(int[] nums) {
 
         Map<Integer, Integer> map = new HashMap<>();

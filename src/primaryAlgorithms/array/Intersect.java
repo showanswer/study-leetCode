@@ -38,6 +38,30 @@ public class Intersect {
      * @return
      * 思路：先数组排序遍历， 两个同时遍历，小的一方相加，相等则添加到数组中
      */
+    public int[] intersect2(int[] nums1, int[] nums2) {
+        List<Integer> list = new ArrayList<>();
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        int i=0, j=0;
+        while (i<nums1.length && j <nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                list.add(nums1[i]);
+                i++;
+                j++;
+            }
+        }
+        // 交集数据取出后， 转为数组
+        int[] res = new int[list.size()];
+        for (int k = 0; k < res.length; k++) {
+            res[k] = list.get(k);
+        }
+        return res;
+    }
+
     public int[] intersect(int[] nums1, int[] nums2) {
         List<Integer> list = new ArrayList<>();
         Arrays.sort(nums1);

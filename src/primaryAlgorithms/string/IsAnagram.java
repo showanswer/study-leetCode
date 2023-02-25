@@ -1,6 +1,8 @@
 package primaryAlgorithms.string;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author answer
@@ -17,7 +19,7 @@ public class IsAnagram {
      */
     public static void main(String[] args) {
         IsAnagram test = new IsAnagram();
-        boolean flag = test.isAnagram1("anagram", "nagaram");
+        boolean flag = test.isAnagram2("anagram", "nagaram");
         System.out.println(flag);
     }
 
@@ -28,6 +30,28 @@ public class IsAnagram {
      * @param t
      * @return 思路： 先统计每个字符串中字符的个数， 在比较
      */
+    public boolean isAnagram2(String s, String t) {
+        Map<Character, Integer> map = new HashMap<>();
+        char[] chars1 = s.toCharArray();
+        for (int i = 0; i < chars1.length; i++) {
+            map.put(chars1[i], map.getOrDefault(chars1[i], 0)+1);
+        }
+        char[] chars2 = t.toCharArray();
+        for (int i = 0; i < chars2.length; i++) {
+            if (map.get(chars2[i]) != null) {
+                map.put(chars2[i], map.get(chars2[i])-1);
+            } else {
+                return false;
+            }
+        }
+        for (Integer value : map.values()) {
+            if (value != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;

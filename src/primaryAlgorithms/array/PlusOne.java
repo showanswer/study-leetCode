@@ -30,6 +30,22 @@ public class PlusOne {
      * @return
      * 思路：数组最后一个元素加1， 如果9+1=10， 则最后一位为0， 前一位+1
      */
+    public int[] plusOne2(int[] digits) {
+        int length  = digits.length;
+        for (int i = length-1; i >=0 ; i--) {
+            if (digits[i] != 9) {
+                digits[i] ++;
+                return digits;
+            } else {
+                digits[i] =0;
+            }
+        }
+        // 走到这里还没有返回那就是 9->10. 如果要扩容数组，那就是后面全为0了
+        int[] temp = new int[length+1];
+        temp[0] = 1;
+        return temp;
+    }
+
     public int[] plusOne(int[] digits) {
         int length = digits.length;
 

@@ -24,6 +24,15 @@ public class ReverseString {
      * @param s
      * 思路： 前后直接交换
      */
+    public void reverseString2(char[] s) {
+        int length = s.length;
+        for (int i = 0; i < s.length/2; i++) {
+            char tmp =s[i];
+            s[i] = s[length-1-i];
+            s[length-1-i] = tmp;
+        }
+    }
+
     public void reverseString(char[] s) {
         int length = s.length;
         for (int i = 0; i < length/2; i++) {

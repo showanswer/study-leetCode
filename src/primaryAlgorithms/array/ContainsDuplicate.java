@@ -31,6 +31,16 @@ public class ContainsDuplicate {
      * @param nums
      * @return 思路： 1. 只要有重复的数值就返回true，否则返回false， 用set可以直接解决
      */
+    public boolean containsDuplicate3(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if(!set.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {

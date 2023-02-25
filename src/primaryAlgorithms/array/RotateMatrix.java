@@ -32,7 +32,6 @@ public class RotateMatrix {
             matrix[i] = matrix[length -1 -i];
             matrix[length -1 -i] = temp;
         }
-
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i+1; j < matrix.length; j++) {
                 int temp = matrix[i][j];

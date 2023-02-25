@@ -15,8 +15,8 @@ public class MoveZeroes {
      */
     public static void main(String[] args) {
         MoveZeroes test = new MoveZeroes();
-        int[] nums = new int[]{0, 1, 0, 3, 12};
-        test.moveZeroes1(nums);
+        int[] nums = new int[]{1,0,0,3,12};
+        test.moveZeroes2(nums);
         for (int num : nums) {
             System.out.println(num);
         }
@@ -27,6 +27,18 @@ public class MoveZeroes {
      *
      * @param nums 思路： 如果为0就和索引>=该索引，最近的非0的相交换位置
      */
+    public void moveZeroes2(int[] nums) {
+        int count =0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[count++]= nums[i];
+            }
+        }
+        while (count<nums.length) {
+            nums[count++] =0;
+        }
+    }
+
     public void moveZeroes(int[] nums) {
         int length = nums.length;
         for (int i = 0; i < length; i++) {

@@ -28,6 +28,18 @@ public class RemoveDuplicates {
      * 思路： 双指针实现。 因为需要在数组直接操作。 两个指针一前一后， 指向对象相同， 就记录相同的个数。 不同就把后指针的值存在倩指针后一个位置
      * 同个当前索引 - 相同的个数就可以实现
      */
+    public int removeDuplicates2(int[] nums) {
+        int count =0;
+        for (int i = 1; i < nums.length; i++) {
+             if(nums[i] == nums[i-1]) {
+                 count++;
+             } else {
+                 nums[i-count] = nums[i];
+             }
+        }
+        return nums.length - count;
+    }
+
     public int removeDuplicates(int[] nums) {
         int count =0;
         for (int i = 1; i < nums.length; i++) {

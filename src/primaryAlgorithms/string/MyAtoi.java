@@ -38,6 +38,47 @@ public class MyAtoi {
      * @param s
      * @return
      */
+    public int myAtoi2(String s) {
+        char[] chars = s.toCharArray();
+        int length = s.length();
+        int index = 0;
+        while (index < length && chars[index] == ' ') {
+            index++;
+        }
+        // 极端情况 "  " 和""
+        if (index >= length) {
+            return 0;
+        }
+        // 判断符号, 有符号就index++， 这样索引就为第一个正式元素的下标了
+        int sign = 1;
+        if (chars[index] == '-') {
+            sign = -1;
+            index++;
+        } else if (chars[index] == '+') {
+            index++;
+        }
+        int result = 0;
+        int temp = 0;
+        while (index < length) {
+            // 还要判断是否十数字 非数字就过滤掉
+            int num = chars[index] - '0';
+            if (num > 9 || num < 0) {
+                break;
+            }
+            temp = result;
+            result = result * 10 + num;
+            if (result / 10 != temp) {
+                if (sign > 0) {
+                    return Integer.MAX_VALUE;
+                } else {
+                    return Integer.MIN_VALUE;
+                }
+            }
+            index++;
+        }
+        return result * sign;
+    }
+
     public int myAtoi(String s) {
         char[] chars = s.toCharArray();
         int length = s.length();

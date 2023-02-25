@@ -24,6 +24,27 @@ public class IsPalindrome {
      * @return
      * 思路：双指针，一个指向前，一个指向后。 遇到非数字或字符的就跳过， 否则就比较
      */
+    public boolean isPalindrome1(String s) {
+        int length = s.length();
+        int i = 0;
+        int j = length-1;
+        char[] chars = s.toCharArray();
+        while (i<j) {
+            while (i<j && !Character.isLetterOrDigit(chars[i])) {
+                i++;
+            }
+            while (i<j && !Character.isLetterOrDigit(chars[j])) {
+                j--;
+            }
+            if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
     public boolean isPalindrome(String s) {
         if (s.length() == 0 || s.equals(" ")) {
             return true;

@@ -30,6 +30,21 @@ public class FirstUniqChar {
      * @param s
      * @return 思路2：使用hash， key为字符，value为次数。
      */
+    public int firstUniqChar3(String s) {
+        int length = s.length();
+        Map<Character, Integer> map = new HashMap<>();
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < length; i++) {
+            map.put(chars[i], map.getOrDefault(chars[i], 0) + 1);
+        }
+        for (int i = 0; i < length; i++) {
+            if (map.get(chars[i]) == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public int firstUniqChar(String s) {
         int length = s.length();
         Map<Character, Integer> map = new HashMap<>();
