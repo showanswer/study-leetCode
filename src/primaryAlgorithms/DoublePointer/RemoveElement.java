@@ -22,6 +22,7 @@ public class RemoveElement {
      * @param nums
      * @param val
      * @return
+     * 思路： 统计不等于target值的数
      */
     public int removeElement(int[] nums, int val) {
         int left = 0;
@@ -35,6 +36,12 @@ public class RemoveElement {
     }
 
 
+    /**
+     * 统计等于target值的数
+     * @param nums
+     * @param val
+     * @return
+     */
     public int removeElement1(int[] nums, int val) {
         int j=0;
         for (int i = 0; i < nums.length; i++) {

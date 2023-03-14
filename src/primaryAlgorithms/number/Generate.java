@@ -44,4 +44,26 @@ public class Generate {
         return res;
     }
 
+    /**
+     * 思路：
+     * @param numRows
+     * @return
+     */
+    public List<List<Integer>> generate1(int numRows) {
+        //结果值
+        List<List<Integer>> res = new ArrayList<>();
+        //每一行的元素
+        List<Integer> row = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            //下面一行都会比上面一行多一个元素，我们在第一个位置给他加个1
+            row.add(0,1);
+            for (int j = 1; j < row.size()-1; j++) {
+                row.set(j, row.get(j)+row.get(j+1));
+            }
+            //把结果存放到res中
+            res.add(new ArrayList<>(row));
+        }
+        return res;
+    }
+
 }
