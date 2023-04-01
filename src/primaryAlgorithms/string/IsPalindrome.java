@@ -46,25 +46,22 @@ public class IsPalindrome {
     }
 
     public boolean isPalindrome(String s) {
-        if (s.length() == 0 || s.equals(" ")) {
-            return true;
-        }
-        int left=0, right=s.length()-1;
-        while(left<right){
-            // 一直 直到找到数字或字符为止
-            while (left<right && !Character.isLetterOrDigit(s.charAt(left))) {
-                left++;
-            }
-            while (left<right && !Character.isLetterOrDigit(s.charAt(right))) {
-                right--;
-            }
-            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
+       int i =0;
+       int j =s.length()-1;
+       while(i<j) {
+           while (i<j && !Character.isLetterOrDigit(s.charAt(i))){
+               i++;
+           }
+           while (i<j && !Character.isLetterOrDigit(s.charAt(j))){
+               j--;
+           }
+           if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
+               return false;
+           }
+           i++;
+           j--;
+       }
+       return true;
     }
 
 }

@@ -25,6 +25,27 @@ public class TwoSum {
     }
 
     /**
+     * 双指针
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSum(int[] nums, int target) {
+        int left =0;
+        int right = nums.length -1;
+        while (left < right) {
+            if (nums[left]+ nums[right] == target){
+                return new int[]{left +1, +1};
+            } else if (nums[left]+ nums[right] > target) {
+                right --;
+            } else {
+                left ++;
+            }
+        }
+        return new int[]{-1, -1};
+    }
+
+    /**
      * nums = [2,7,11,15], target = 9 => [0,1]; nums = [3,2,4], target = 6=>[1,2];nums = [3,3], target = 6=>[0,1]
      * @param nums
      * @param target
@@ -46,20 +67,7 @@ public class TwoSum {
         return new int[]{0};
     }
 
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], i);
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if(map.containsKey(target-nums[i])){
-                if (map.get(target-nums[i]) != i) {
-                    return new int[]{i,map.get(target-nums[i])};
-                }
-            }
-        }
-        return new int[]{0};
-    }
+
 
     /**
      * 暴力破解法
