@@ -22,24 +22,17 @@ public class HasCycle {
         ListNode listNode = new ListNode(2);
         ListNode listNode1 = new ListNode(0);
         ListNode listNode2 = new ListNode(4);
-        node.next = listNode;
-        listNode.next = listNode1;
-        listNode1.next = listNode2;
-
-        boolean flag = test.hasCycle(node);
-        System.out.println(flag);
     }
 
     /**
      * head = [3,2,0,-4], pos = 1 => true; head = [1,2], pos = 0=> true; head = [1], pos = -1=>false
      *
      * @param head
-     * @return
-     * 判断链表是否有环应该是老生常谈的一个话题了，最简单的一种方式就是快慢指针，慢指针针每次走一步，快指针每次走两步，
+     * @return 判断链表是否有环应该是老生常谈的一个话题了，最简单的一种方式就是快慢指针，慢指针针每次走一步，快指针每次走两步，
      * 如果相遇就说明有环，如果有一个为空说明没有环。
      */
     public boolean hasCycle(ListNode head) {
-        if (head == null){
+        if (head == null) {
             return false;
         }
         ListNode fast = head;
@@ -67,7 +60,9 @@ public class HasCycle {
             val = x;
             next = null;
         }
-    };
+    }
+
+    ;
 
 
 }

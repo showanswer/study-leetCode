@@ -25,27 +25,28 @@ public class InorderTraversal {
 
     /**
      * 非递归
+     *
      * @param root
      * @return
      */
     public List<Integer> inorderTraversal(TreeNode root) {
-        if (root ==null) {
+        if (root == null) {
             return Collections.emptyList();
         }
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (root.left != null) {
-            root=  root.left;
+            root = root.left;
             stack.push(root);
         }
-        while (stack.size()>0){
+        while (stack.size() > 0) {
             root = stack.pop();
             res.add(root.val);
             if (root.right != null) {
                 root = root.right;
                 stack.push(root);
-                while (root.left != null){
+                while (root.left != null) {
                     root = root.left;
                     stack.push(root);
                 }
@@ -56,10 +57,9 @@ public class InorderTraversal {
 
     /**
      * root = [1,null,2,3] => [1,3,2]
-     * @param root
-     * @return
      *
-     * 递归
+     * @param root
+     * @return 递归
      */
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -68,12 +68,12 @@ public class InorderTraversal {
     }
 
     public void traverse(TreeNode root, List<Integer> res) {
-        if (root ==null) {
+        if (root == null) {
             return;
         }
         traverse(root.left, res);
         res.add(root.val);
-        traverse(root.right,res);
+        traverse(root.right, res);
     }
 
 

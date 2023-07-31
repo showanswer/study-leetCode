@@ -12,7 +12,7 @@ public class Shuffle {
     int[] nums;
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
+        int[] nums = {1, 2, 3};
         Shuffle shuffle = new Shuffle(nums);
         int[] reset = shuffle.reset();
         System.out.println(reset);
@@ -24,8 +24,9 @@ public class Shuffle {
 
     /**
      * 使用整数数组 nums 初始化对象
-     *
+     * <p>
      * 随机返回数组 [1, 2, 3] 打乱后的结果。例如，返回 [1, 3, 2]
+     *
      * @param nums
      */
     public Shuffle(int[] nums) {
@@ -34,6 +35,7 @@ public class Shuffle {
 
     /**
      * 重设数组到它的初始状态 [1, 2, 3] 。返回 [1, 2, 3]
+     *
      * @return
      */
     public int[] reset() {
@@ -42,6 +44,7 @@ public class Shuffle {
 
     /**
      * 打乱数组 [1,2,3] 并返回结果。任何 [1,2,3]的排列返回的概率应该相同。例如，返回 [3, 1, 2]
+     *
      * @return
      */
     public int[] shuffle() {
@@ -60,6 +63,7 @@ public class Shuffle {
 
     /**
      * 交换两个数字的值
+     *
      * @param a
      * @param i
      * @param j

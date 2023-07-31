@@ -21,6 +21,7 @@ public class E0144_PreorderTraversal {
 
     /**
      * 递归
+     *
      * @param root
      * @return
      */
@@ -30,7 +31,7 @@ public class E0144_PreorderTraversal {
         return res;
     }
 
-    private void preHelper(List<Integer> res, TreeNode root){
+    private void preHelper(List<Integer> res, TreeNode root) {
         if (root == null) {
             return;
         }

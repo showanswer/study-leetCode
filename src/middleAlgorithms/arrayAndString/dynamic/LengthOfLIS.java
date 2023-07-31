@@ -2,7 +2,7 @@ package middleAlgorithms.arrayAndString.dynamic;
 
 /**
  * <p>
- *   最长递增子序列
+ * 最长递增子序列
  * </p>
  *
  * @author answer
@@ -16,7 +16,7 @@ public class LengthOfLIS {
      */
     public static void main(String[] args) {
         LengthOfLIS test = new LengthOfLIS();
-        int[] nums = {10,9,2,5,3,7,101,18};
+        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
         System.out.println(test.lengthOfLIS(nums));
     }
 
@@ -28,16 +28,16 @@ public class LengthOfLIS {
         int[] dp = new int[nums.length];
         dp[0] = 1;
         int res = 1;
-        for(int i = 1; i < nums.length; i++){
+        for (int i = 1; i < nums.length; i++) {
             int max = 0;
-            for(int j = 1; (i - j) >= 0; j++){
+            for (int j = 1; (i - j) >= 0; j++) {
                 // 不断和前面的比较，大于则取其中的最大值
-                if(nums[i] > nums[i - j]){
+                if (nums[i] > nums[i - j]) {
                     max = Math.max(dp[i - j], max);
                 }
             }
             dp[i] = max + 1;
-            if(dp[i] > res){
+            if (dp[i] > res) {
                 res = dp[i];
             }
         }

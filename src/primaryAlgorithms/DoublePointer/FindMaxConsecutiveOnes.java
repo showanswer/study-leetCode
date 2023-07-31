@@ -14,7 +14,7 @@ public class FindMaxConsecutiveOnes {
      */
     public static void main(String[] args) {
         FindMaxConsecutiveOnes test = new FindMaxConsecutiveOnes();
-        int[] nums = {1,0,1,1,0};
+        int[] nums = {1, 0, 1, 1, 0};
         System.out.println(test.findMaxConsecutiveOnes(nums));
     }
 
@@ -25,16 +25,16 @@ public class FindMaxConsecutiveOnes {
      * @return
      */
     public int findMaxConsecutiveOnes(int[] nums) {
-        int max=0,temp=0;
+        int max = 0, temp = 0;
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i]==1){
+            if (nums[i] == 1) {
                 temp++;
-            }else{
-                temp=0;
+            } else {
+                temp = 0;
             }
-            max = Math.max(max,temp);
+            max = Math.max(max, temp);
         }
-        return  max;
+        return max;
     }
 
 }

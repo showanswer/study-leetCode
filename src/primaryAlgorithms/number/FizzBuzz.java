@@ -16,6 +16,7 @@ public class FizzBuzz {
      * answer[i] == "Fizz" 如果 i 是 3 的倍数。
      * answer[i] == "Buzz" 如果 i 是 5 的倍数。
      * answer[i] == i （以字符串形式）如果上述条件全不满足。
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -45,13 +46,13 @@ public class FizzBuzz {
         for (int i = 1; i <= list.size(); i++) {
 
             if (i % 3 == 0) {
-                list.set(i-1, "Fizz");
+                list.set(i - 1, "Fizz");
             }
             if (i % 5 == 0) {
-                list.set(i-1, "Buzz");
+                list.set(i - 1, "Buzz");
             }
             if (i % 15 == 0) {
-                list.set(i-1, "FizzBuzz");
+                list.set(i - 1, "FizzBuzz");
             }
         }
         return list;

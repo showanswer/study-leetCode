@@ -14,6 +14,7 @@ public class E0100_IsSameTree {
     /**
      * 给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。
      * 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -34,6 +35,7 @@ public class E0100_IsSameTree {
     /**
      * 判断结构是否相同： 就是判断节点是否为空
      * 判断值是否相同： 直接比较值
+     *
      * @return
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {

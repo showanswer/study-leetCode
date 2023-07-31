@@ -23,9 +23,9 @@ public class E0118_Generate {
         List<List<Integer>> list = new ArrayList<>();
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
-            res.add(0,1);
-            for (int j = 1; j < res.size()-1; j++) {
-                res.set(j, res.get(j) + res.get(j+1));
+            res.add(0, 1);
+            for (int j = 1; j < res.size() - 1; j++) {
+                res.set(j, res.get(j) + res.get(j + 1));
             }
             list.add(new ArrayList<>(res));
         }

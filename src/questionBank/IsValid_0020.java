@@ -22,7 +22,7 @@ public class IsValid_0020 {
 
     public boolean isValid(String s) {
         int length = s.length();
-        if (length % 2 !=0) {
+        if (length % 2 != 0) {
             return false;
         }
 

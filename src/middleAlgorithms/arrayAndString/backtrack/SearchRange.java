@@ -12,12 +12,13 @@ public class SearchRange {
 
     public static void main(String[] args) {
         SearchRange test = new SearchRange();
-        int[] nums ={5,7,7,8,8,10};
+        int[] nums = {5, 7, 7, 8, 8, 10};
         test.searchRange(nums, 8);
     }
 
     /**
      * nums = [5,7,7,8,8,10], target = 8 => [3,4]
+     *
      * @param nums
      * @param target
      * @return
@@ -28,10 +29,10 @@ public class SearchRange {
             return new int[]{-1, -1};
         }
 
-        int p =0;
-        int q =nums.length -1;
+        int p = 0;
+        int q = nums.length - 1;
         while (p <= q) {
-            while (p<=q && nums[p] != target) {
+            while (p <= q && nums[p] != target) {
                 ++p;
             }
             while (p <= q && nums[q] != target) {

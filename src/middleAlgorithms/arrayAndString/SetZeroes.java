@@ -9,12 +9,13 @@ public class SetZeroes {
 
     public static void main(String[] args) {
         SetZeroes test = new SetZeroes();
-        int[][] nums = {{1,1,1},{1,0,1},{1,1,1}};
+        int[][] nums = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
         test.setZeroes(nums);
     }
 
     /**
      * matrix = [[1,1,1],[1,0,1],[1,1,1]] => [[1,0,1],[0,0,0],[1,0,1]]
+     *
      * @param matrix
      */
     public void setZeroes(int[][] matrix) {

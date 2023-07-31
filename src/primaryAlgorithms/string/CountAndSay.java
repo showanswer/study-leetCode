@@ -23,9 +23,9 @@ public class CountAndSay {
 
     /**
      * n = 4 => "1211"; n = 1=>1
+     *
      * @param n
-     * @return
-     * 先确立递归出口 n = 1时 为1
+     * @return 先确立递归出口 n = 1时 为1
      * 对上一个结果进行遍历获取值
      * 设定计数器，计算同一个数字出现的次数
      * 如果数字相同，计数器加一
@@ -33,20 +33,20 @@ public class CountAndSay {
      * 将最后的结果也追加到字符串上
      */
     public String countAndSay2(int n) {
-        if (n ==1) {
+        if (n == 1) {
             return "1";
         }
-        String s1 =countAndSay2(n-1);
+        String s1 = countAndSay2(n - 1);
         StringBuilder res = new StringBuilder();
         char local = s1.charAt(0);
-        int count =1;
+        int count = 1;
         for (int i = 1; i < s1.length(); i++) {
             if (s1.charAt(i) == local) {
                 count++;
             } else {
                 res.append(count);
                 res.append(local);
-                count =1;
+                count = 1;
                 local = s1.charAt(i);
             }
         }
@@ -57,18 +57,18 @@ public class CountAndSay {
 
 
     public String countAndSay(int n) {
-        if (n==1) {
+        if (n == 1) {
             return "1";
         }
         // 假设我们获得上一次的结果为 s1 = 112213
-        String lastRes = countAndSay(n-1);
-        StringBuilder result  = new StringBuilder();
+        String lastRes = countAndSay(n - 1);
+        StringBuilder result = new StringBuilder();
         // 对s1遍历处理获取值, local 上一层的第一个元素
         char local = lastRes.charAt(0);
         int count = 0;
         for (int i = 0; i < lastRes.length(); i++) {
             // 设定计数器 计算同一个数字出现的次数 count
-            if(lastRes.charAt(i) == local){
+            if (lastRes.charAt(i) == local) {
                 count++;
             } else {
                 // 不符合，记录下
@@ -87,9 +87,9 @@ public class CountAndSay {
 
     /**
      * n = 4 => "1211"; n = 1=>1
+     *
      * @param n
-     * @return
-     * 先确立递归出口 n = 1时 为1
+     * @return 先确立递归出口 n = 1时 为1
      * 对上一个结果进行遍历获取值
      * 设定计数器，计算同一个数字出现的次数
      * 如果数字相同，计数器加一
@@ -97,7 +97,7 @@ public class CountAndSay {
      * 将最后的结果也追加到字符串上
      */
     public String countAndSay1(int n) {
-        if (n ==1) {
+        if (n == 1) {
             return "1";
         }
         String s1 = countAndSay1(n - 1);
@@ -112,7 +112,7 @@ public class CountAndSay {
             } else {
                 result.append(count);
                 result.append(local);
-                count =1;
+                count = 1;
                 local = s1.charAt(i);
             }
         }

@@ -18,6 +18,7 @@ public class E0125_IsPalindrome {
 
     /**
      * 字符反转
+     *
      * @param s
      * @return
      */
@@ -25,9 +26,9 @@ public class E0125_IsPalindrome {
         StringBuilder sb = new StringBuilder();
         int length = s.length();
         for (int i = 0; i < length; i++) {
-             if (Character.isLetterOrDigit(s.charAt(i))) {
-                 sb.append(Character.toLowerCase(s.charAt(i)));
-             }
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                sb.append(Character.toLowerCase(s.charAt(i)));
+            }
         }
         StringBuilder sb1 = new StringBuilder(sb).reverse();
         return sb1.toString().equals(sb.toString());
@@ -35,25 +36,26 @@ public class E0125_IsPalindrome {
 
     /**
      * 双指针
+     *
      * @param s
      * @return
      */
     public boolean isPalindrome(String s) {
-        int left =0;
-        int right =s.length()-1;
+        int left = 0;
+        int right = s.length() - 1;
 
         while (left < right) {
             while (left < right && !Character.isLetterOrDigit(s.charAt(left))) {
-                left ++;
+                left++;
             }
             while (left < right && !Character.isLetterOrDigit(s.charAt(right))) {
-                right --;
+                right--;
             }
-            if (Character.toLowerCase(s.charAt(left))  != Character.toLowerCase(s.charAt(right))) {
+            if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) {
                 return false;
             } else {
-                left ++;
-                right --;
+                left++;
+                right--;
             }
         }
         return true;

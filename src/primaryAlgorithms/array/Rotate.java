@@ -33,12 +33,13 @@ public class Rotate {
         int length = nums.length;
         int[] tmp = Arrays.copyOf(nums, length);
         for (int i = 0; i < length; i++) {
-            nums[(i+k)%length] = tmp[i];
+            nums[(i + k) % length] = tmp[i];
         }
         for (int num : tmp) {
             System.out.print(num);
         }
     }
+
     public void rotate(int[] nums, int k) {
         int length = nums.length;
         int t = length - k;
@@ -50,7 +51,7 @@ public class Rotate {
                 tmp3[i - t] = nums[i];
             }
         }
-      
+
         for (int num : tmp3) {
             System.out.print(num);
         }
@@ -58,12 +59,13 @@ public class Rotate {
 
     public void rotate1(int[] nums, int k) {
         int length = nums.length;
-        int temp[] = new int[length];;
+        int temp[] = new int[length];
+        ;
         for (int i = 0; i < length; i++) {
             temp[i] = nums[i];
         }
         for (int i = 0; i < length; i++) {
-            nums[(i+k)%length] =  temp[i];
+            nums[(i + k) % length] = temp[i];
         }
     }
 

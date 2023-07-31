@@ -17,7 +17,7 @@ public class TwoSum {
      */
     public static void main(String[] args) {
         TwoSum test = new TwoSum();
-        int [] nums= new int[]{3,2,4};
+        int[] nums = new int[]{3, 2, 4};
         int[] ints = test.twoSum1(nums, 6);
         for (int num : ints) {
             System.out.println(num);
@@ -26,20 +26,21 @@ public class TwoSum {
 
     /**
      * 双指针
+     *
      * @param nums
      * @param target
      * @return
      */
     public int[] twoSum(int[] nums, int target) {
-        int left =0;
-        int right = nums.length -1;
+        int left = 0;
+        int right = nums.length - 1;
         while (left < right) {
-            if (nums[left]+ nums[right] == target){
-                return new int[]{left +1, +1};
-            } else if (nums[left]+ nums[right] > target) {
-                right --;
+            if (nums[left] + nums[right] == target) {
+                return new int[]{left + 1, +1};
+            } else if (nums[left] + nums[right] > target) {
+                right--;
             } else {
-                left ++;
+                left++;
             }
         }
         return new int[]{-1, -1};
@@ -47,10 +48,10 @@ public class TwoSum {
 
     /**
      * nums = [2,7,11,15], target = 9 => [0,1]; nums = [3,2,4], target = 6=>[1,2];nums = [3,3], target = 6=>[0,1]
+     *
      * @param nums
      * @param target
-     * @return
-     * 思路：利用hashMap, 已知元素不能重复，则元素值为key， 索引为value。 判断target-元素值，是否在map中存在
+     * @return 思路：利用hashMap, 已知元素不能重复，则元素值为key， 索引为value。 判断target-元素值，是否在map中存在
      */
     public int[] twoSum2(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -58,9 +59,9 @@ public class TwoSum {
             map.put(nums[i], i);
         }
         for (int i = 0; i < nums.length; i++) {
-            if(map.containsKey(target-nums[i])){
-                if (map.get(target-nums[i]) != i) {
-                    return new int[]{i,map.get(target-nums[i])};
+            if (map.containsKey(target - nums[i])) {
+                if (map.get(target - nums[i]) != i) {
+                    return new int[]{i, map.get(target - nums[i])};
                 }
             }
         }
@@ -68,16 +69,16 @@ public class TwoSum {
     }
 
 
-
     /**
      * 暴力破解法
+     *
      * @param nums
      * @param target
      * @return
      */
     public int[] twoSum1(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i+1; j < nums.length; j++) {
+            for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
                     return new int[]{i, j};
                 }

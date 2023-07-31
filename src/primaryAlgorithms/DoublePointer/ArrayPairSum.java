@@ -17,22 +17,22 @@ public class ArrayPairSum {
      */
     public static void main(String[] args) {
         ArrayPairSum test = new ArrayPairSum();
-        int[] nums = {6,2,6,5,1,2};
+        int[] nums = {6, 2, 6, 5, 1, 2};
         System.out.println(test.arrayPairSum(nums));
     }
 
     /**
      * nums = [1,4,3,2] =>4;  nums = [6,2,6,5,1,2]=>9
+     *
      * @param nums
-     * @return
-     * 思路： 数组全拆分成2对的， 从小到大排序，
+     * @return 思路： 数组全拆分成2对的， 从小到大排序，
      */
     public int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
-        int res=0;
-        for(int idx=0;idx<nums.length;idx++){
-            if(idx%2==0) {
-                res+=nums[idx];
+        int res = 0;
+        for (int idx = 0; idx < nums.length; idx++) {
+            if (idx % 2 == 0) {
+                res += nums[idx];
             }
         }
         return res;

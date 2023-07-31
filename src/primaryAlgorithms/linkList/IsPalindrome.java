@@ -29,7 +29,8 @@ public class IsPalindrome {
     }
 
     /**
-     *  先用两个指针找到中间节点， 在对这个中间节点后面的元素进行数据反转， 。 然后再进行比较， 头节点喝中间节点开始比较
+     * 先用两个指针找到中间节点， 在对这个中间节点后面的元素进行数据反转， 。 然后再进行比较， 头节点喝中间节点开始比较
+     *
      * @param head
      * @return
      */
@@ -59,7 +60,6 @@ public class IsPalindrome {
 
 
     /**
-     *
      * @param head
      * @return 反转链表
      */
@@ -76,9 +76,9 @@ public class IsPalindrome {
 
     /**
      * head = [1,2,2,1]=> true; head = [1,2]=> false
+     *
      * @param head
-     * @return
-     * 思路： 先遍历节点， 数据存到list中。 然后遍历list
+     * @return 思路： 先遍历节点， 数据存到list中。 然后遍历list
      */
     public boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
@@ -89,8 +89,8 @@ public class IsPalindrome {
 
         if (list.size() > 0) {
             int len = list.size();
-            for (int i = 0; i < len/2; i++) {
-                if (!list.get(i).equals(list.get(len -i -1))) {
+            for (int i = 0; i < len / 2; i++) {
+                if (!list.get(i).equals(list.get(len - i - 1))) {
                     return false;
                 }
             }

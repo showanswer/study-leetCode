@@ -24,9 +24,9 @@ public class FirstBadVersion {
 
     /**
      * n = 5, bad = 4 => 4; n = 1, bad = 1=>1
+     *
      * @param n
-     * @return
-     * 思路： 二分查找，先从中间版本开始调用api测试
+     * @return 思路： 二分查找，先从中间版本开始调用api测试
      */
     public int firstBadVersion(int n) {
         int start = 1, end = n;
@@ -42,5 +42,9 @@ public class FirstBadVersion {
     }
 
 
-    boolean isBadVersion(int version){return true;};
+    boolean isBadVersion(int version) {
+        return true;
+    }
+
+    ;
 }

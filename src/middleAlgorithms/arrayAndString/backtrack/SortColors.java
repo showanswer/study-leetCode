@@ -12,23 +12,24 @@ public class SortColors {
 
     public static void main(String[] args) {
         SortColors test = new SortColors();
-        int[] nums ={2,0,2,1,1,0};
+        int[] nums = {2, 0, 2, 1, 1, 0};
         test.sortColors(nums);
     }
 
     /**
-     *  nums = [2,0,2,1,1,0] => [0,0,1,1,2,2];
-     *  nums = [2,0,1] => [0,1,2]
+     * nums = [2,0,2,1,1,0] => [0,0,1,1,2,2];
+     * nums = [2,0,1] => [0,1,2]
+     *
      * @param nums
      */
     public void sortColors(int[] nums) {
-        int left =0;
-        int right =nums.length -1;
+        int left = 0;
+        int right = nums.length - 1;
 
         for (int i = 0; i <= right; i++) {
-            if (nums[i] == 0){
+            if (nums[i] == 0) {
                 swap(nums, left, i);
-                left ++;
+                left++;
             }
             if (nums[i] == 2) {
                 swap(nums, right, i);
@@ -38,7 +39,7 @@ public class SortColors {
         }
     }
 
-    public void swap(int[] nums, int i, int j){
+    public void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;

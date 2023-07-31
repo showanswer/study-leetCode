@@ -38,8 +38,7 @@ public class LevelOrder {
      * root = [3,9,20,null,null,15,7] => [[3],[9,20],[15,7]]
      *
      * @param root
-     * @return
-     * 把每层得值存入到队列中, 记录遍历完一个值后出队一个
+     * @return 把每层得值存入到队列中, 记录遍历完一个值后出队一个
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
@@ -50,13 +49,13 @@ public class LevelOrder {
         // 把当前节点加进队列中
         queue.offer(root);
         // 队列不为空， 有元素没有被遍历完
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             // 记录每层有多少个节点
             int size = queue.size();
             // 新建子list，存储当前层得节点元素值
             List<Integer> list = new ArrayList<>(size);
             // 该层所有节点都要遍历完
-            while (size -- >0) {
+            while (size-- > 0) {
                 TreeNode node = queue.poll();
                 list.add(node.val);
                 if (node.left != null) {

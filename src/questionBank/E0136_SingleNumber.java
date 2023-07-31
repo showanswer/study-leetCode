@@ -14,7 +14,7 @@ public class E0136_SingleNumber {
 
     public static void main(String[] args) {
         E0136_SingleNumber test = new E0136_SingleNumber();
-        int[] nums = {4,1,2,1,2};
+        int[] nums = {4, 1, 2, 1, 2};
         System.out.println(test.singleNumber(nums));
     }
 
@@ -25,7 +25,7 @@ public class E0136_SingleNumber {
                 set.remove(nums[i]);
             }
         }
-        return (int)set.toArray()[0];
+        return (int) set.toArray()[0];
 
     }
 

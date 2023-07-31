@@ -32,10 +32,10 @@ public class CanJump {
         int max = nums[0];
         for (int i = 1; i < nums.length; i++) {
             if (max >= i) {
-                 max = Math.max(max, nums[i]+i);
+                max = Math.max(max, nums[i] + i);
             }
         }
-        return max >= nums.length-1;
+        return max >= nums.length - 1;
     }
 
     public boolean canJump1(int[] nums) {

@@ -18,12 +18,13 @@ public class MinSubArrayLen {
      */
     public static void main(String[] args) {
         MinSubArrayLen test = new MinSubArrayLen();
-        int[] nums = {2,3,1,2,4,3};
+        int[] nums = {2, 3, 1, 2, 4, 3};
         System.out.println(test.minSubArrayLen1(7, nums));
     }
 
     /**
      * target = 7, nums = [2,3,1,2,4,3] =>2; target = 4, nums = [1,4,4]=> 1; target = 11, nums = [1,1,1,1,1,1,1,1]=>0
+     *
      * @param target
      * @param nums
      * @return
@@ -32,11 +33,11 @@ public class MinSubArrayLen {
         // 遍历
         int length = nums.length;
         int min = Integer.MAX_VALUE;
-        for(int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             int sum = 0;
-            for(int j = i; j < length; j++){
+            for (int j = i; j < length; j++) {
                 sum += nums[j];
-                if(sum >= target){
+                if (sum >= target) {
                     min = Math.min(min, j - i + 1);
                     break;
                 }
@@ -48,6 +49,7 @@ public class MinSubArrayLen {
 
     /**
      * 滑动窗口
+     *
      * @param target
      * @param nums
      * @return
@@ -56,9 +58,9 @@ public class MinSubArrayLen {
 
         int left = 0, right = 0, sum = 0;
         int min = Integer.MAX_VALUE;
-        while(right < nums.length){
+        while (right < nums.length) {
             sum += nums[right];
-            while(sum >= target){
+            while (sum >= target) {
                 min = Math.min(min, right - left + 1);
                 sum -= nums[left];
                 left++;

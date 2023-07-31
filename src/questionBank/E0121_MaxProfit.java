@@ -12,7 +12,7 @@ public class E0121_MaxProfit {
 
     public static void main(String[] args) {
         E0121_MaxProfit test = new E0121_MaxProfit();
-        int[] nums = {7,1,5,3,6,4};
+        int[] nums = {7, 1, 5, 3, 6, 4};
         System.out.println(test.maxProfit(nums));
     }
 

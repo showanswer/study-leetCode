@@ -16,7 +16,7 @@ public class PlusOne {
      */
     public static void main(String[] args) {
         PlusOne solution = new PlusOne();
-        int []nums = new int[]{9};
+        int[] nums = new int[]{9};
         int[] ints = solution.plusOne1(nums);
         for (int num : ints) {
             System.out.println(num);
@@ -26,22 +26,22 @@ public class PlusOne {
 
     /**
      * digits = [1,2,3] =>[1,2,4],  digits = [4,3,2,1] =>[4,3,2,2], digits = [0]=>[1]
+     *
      * @param digits
-     * @return
-     * 思路：数组最后一个元素加1， 如果9+1=10， 则最后一位为0， 前一位+1
+     * @return 思路：数组最后一个元素加1， 如果9+1=10， 则最后一位为0， 前一位+1
      */
     public int[] plusOne2(int[] digits) {
-        int length  = digits.length;
-        for (int i = length-1; i >=0 ; i--) {
+        int length = digits.length;
+        for (int i = length - 1; i >= 0; i--) {
             if (digits[i] != 9) {
-                digits[i] ++;
+                digits[i]++;
                 return digits;
             } else {
-                digits[i] =0;
+                digits[i] = 0;
             }
         }
         // 走到这里还没有返回那就是 9->10. 如果要扩容数组，那就是后面全为0了
-        int[] temp = new int[length+1];
+        int[] temp = new int[length + 1];
         temp[0] = 1;
         return temp;
     }
@@ -49,31 +49,31 @@ public class PlusOne {
     public int[] plusOne(int[] digits) {
         int length = digits.length;
 
-        int add =0;
-        for (int i = length-1; i >=0 ; i--) {
+        int add = 0;
+        for (int i = length - 1; i >= 0; i--) {
             int num = digits[i];
-            if (i == length-1) {
+            if (i == length - 1) {
                 num = digits[i] + 1;
             }
-            if (add !=0) {
-                num =num +add;
+            if (add != 0) {
+                num = num + add;
                 add = 0;
             }
-            if (num ==10) {
-                add =1;
-                digits[i] =0;
+            if (num == 10) {
+                add = 1;
+                digits[i] = 0;
             } else {
-                digits[i] =num;
+                digits[i] = num;
             }
         }
         if (add == 1) {
-            int[]  res = new int[length+1];
-            res[0] =1;
+            int[] res = new int[length + 1];
+            res[0] = 1;
             for (int i = 1; i < res.length; i++) {
-                res[i] = digits[i-1];
+                res[i] = digits[i - 1];
             }
             return res;
-        }else {
+        } else {
             return digits;
         }
     }
@@ -81,21 +81,22 @@ public class PlusOne {
 
     /**
      * 优化1
+     *
      * @param digits
      * @return
      */
     public int[] plusOne1(int[] digits) {
         int length = digits.length;
-        for (int i = length-1; i >=0 ; i--) {
+        for (int i = length - 1; i >= 0; i--) {
             if (digits[i] != 9) {
                 digits[i]++;
                 return digits;
             } else {
-                digits[i] =0;
+                digits[i] = 0;
             }
         }
         // 走到这里还没有返回那就是 9->10. 如果要扩容数组，那就是后面全为0了
-        int[] temp = new int[length+1];
+        int[] temp = new int[length + 1];
         temp[0] = 1;
         return temp;
     }

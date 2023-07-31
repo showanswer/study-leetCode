@@ -30,18 +30,18 @@ public class E0094_InorderTraversal {
 
     /**
      * 中序遍历有两种方式： 递归 和  非递归
+     *
      * @param root
-     * @return
-     * 思路： 递归的话： 左-中-右
+     * @return 思路： 递归的话： 左-中-右
      */
     public List<Integer> inorderTraversal1(TreeNode root) {
-        List<Integer> res  = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
         traverse(root, res);
         return res;
     }
 
     public void traverse(TreeNode root, List<Integer> res) {
-        if (root ==null) {
+        if (root == null) {
             return;
         }
         traverse(root.left, res);

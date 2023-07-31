@@ -34,12 +34,12 @@ public class IsAnagram {
         Map<Character, Integer> map = new HashMap<>();
         char[] chars1 = s.toCharArray();
         for (int i = 0; i < chars1.length; i++) {
-            map.put(chars1[i], map.getOrDefault(chars1[i], 0)+1);
+            map.put(chars1[i], map.getOrDefault(chars1[i], 0) + 1);
         }
         char[] chars2 = t.toCharArray();
         for (int i = 0; i < chars2.length; i++) {
             if (map.get(chars2[i]) != null) {
-                map.put(chars2[i], map.get(chars2[i])-1);
+                map.put(chars2[i], map.get(chars2[i]) - 1);
             } else {
                 return false;
             }

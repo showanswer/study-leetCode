@@ -16,12 +16,13 @@ public class TopKFrequent {
 
     public static void main(String[] args) {
         TopKFrequent test = new TopKFrequent();
-        int[] nums = {1,1,1,2,2,3};
+        int[] nums = {1, 1, 1, 2, 2, 3};
         test.topKFrequent(nums, 2);
     }
 
     /**
      * nums = [1,1,1,2,2,3], k = 2 => [1,2]
+     *
      * @param nums
      * @param k
      * @return
@@ -29,7 +30,7 @@ public class TopKFrequent {
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0)+1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
         PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((a, b) -> b[1] - a[1]);

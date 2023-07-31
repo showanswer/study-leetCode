@@ -14,6 +14,7 @@ public class ClimbStairs {
      * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
      * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
      * 1 <= n <= 45
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -23,27 +24,28 @@ public class ClimbStairs {
     }
 
     public int climbStairsTest1(int n) {
-        if (n<=1) {
+        if (n <= 1) {
             return 1;
         }
 
-        int []res= new int[n+1];
-        res[1] =1;
-        res[2] =2;
-        res[3] =3;
+        int[] res = new int[n + 1];
+        res[1] = 1;
+        res[2] = 2;
+        res[3] = 3;
         for (int i = 3; i < res.length; i++) {
-            res[i] = res[i-1] + res[i-2];
+            res[i] = res[i - 1] + res[i - 2];
         }
         return res[n];
     }
 
     /**
      * n = 2 => 2; n = 3=>3
+     *
      * @param n
      * @return
      */
     public int climbStairs(int n) {
-        if(n<=1){
+        if (n <= 1) {
             return 1;
         }
         int[] res = new int[n + 1];
@@ -57,6 +59,7 @@ public class ClimbStairs {
 
     /**
      * n = 2 => 2; n = 3=>3
+     *
      * @param n
      * @return
      */
@@ -66,6 +69,7 @@ public class ClimbStairs {
 
     /**
      * 尾递归
+     *
      * @param n
      * @param a
      * @param b
@@ -79,23 +83,21 @@ public class ClimbStairs {
     }
 
 
-
     /**
      * n = 2 => 2; n = 3=>3
+     *
      * @param n
-     * @return
-     * 这种当n比较大的时候会超时
+     * @return 这种当n比较大的时候会超时
      */
     public int climbStairs1(int n) {
-        if (n<=1) {
+        if (n <= 1) {
             return 1;
         }
-        if (n<3) {
+        if (n < 3) {
             return n;
         }
-        return climbStairs1(n - 1) + climbStairs1(n-2);
+        return climbStairs1(n - 1) + climbStairs1(n - 2);
     }
-
 
 
 }

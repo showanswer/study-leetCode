@@ -141,16 +141,16 @@ public class MyAtoi {
         }
         // 循环遍历剩下 非前导空格
         int res = 0;
-        int tmp=0;
+        int tmp = 0;
         while (index < length) {
             // 字符转为数字
             int num = s.charAt(index++) - '0';
             // 遇到非数字的字符就直接结束
-            if (num> 9 || num < 0) {
+            if (num > 9 || num < 0) {
                 break;
             }
-            tmp =res;
-            res = res *10 + num;
+            tmp = res;
+            res = res * 10 + num;
             // 超过了int的范围界限
             if (res / 10 != tmp) {
                 if (sign == -1) {

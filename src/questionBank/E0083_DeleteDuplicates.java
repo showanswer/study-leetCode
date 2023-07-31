@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  * <p>
- *   删除排序链表中的重复元素
+ * 删除排序链表中的重复元素
  * </p>
  *
  * @author answer
@@ -40,6 +40,7 @@ public class E0083_DeleteDuplicates {
     /**
      * 删除链表种的重复元素。 首先这里是已经排序好了的，从大到小， 重复元素 也就是相邻的元素可能重复，
      * 只需相邻元素值进行比较即可
+     *
      * @param head
      * @return
      */

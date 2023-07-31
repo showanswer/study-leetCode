@@ -20,14 +20,6 @@ public class MergeTwoLists {
         ListNode listNodes2 = new ListNode(3);
         ListNode listNode3 = new ListNode(4);
         ListNode listNodes3 = new ListNode(4);
-
-        listNode.next = listNode1;
-        listNode1.next = listNode3;
-
-        listNodes.next = listNodes2;
-        listNodes2.next = listNodes3;
-
-        test.mergeTwoLists1(listNode, listNodes);
     }
 
     /**
@@ -64,6 +56,7 @@ public class MergeTwoLists {
 
     /**
      * 优化 递归实现
+     *
      * @param list1
      * @param list2
      * @return

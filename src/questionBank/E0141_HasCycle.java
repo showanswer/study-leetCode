@@ -21,7 +21,7 @@ public class E0141_HasCycle {
 
     public boolean hasCycle(ListNode head) {
         HashSet<ListNode> set = new HashSet<>();
-        while (head !=null) {
+        while (head != null) {
             if (!set.add(head)) {
                 return true;
             }

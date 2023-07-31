@@ -44,15 +44,16 @@ public class ReverseList {
             return null;
         }
         ListNode listNode = stack.pop();
-        ListNode temp =listNode;
+        ListNode temp = listNode;
         while (!stack.isEmpty()) {
             ListNode node = stack.pop();
-            listNode.next =node;
+            listNode.next = node;
             listNode = listNode.next;
         }
         listNode.next = null;
         return temp;
     }
+
     public ListNode reverseList1(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
         if (head != null) {
@@ -67,7 +68,7 @@ public class ReverseList {
         // 临时存储头节点， 用于返回
         ListNode dummy = node;
         while (!stack.isEmpty()) {
-            ListNode tempNode  = stack.pop();
+            ListNode tempNode = stack.pop();
             node.next = tempNode;
             node = node.next;
         }

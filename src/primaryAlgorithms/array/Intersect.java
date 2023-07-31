@@ -20,8 +20,8 @@ public class Intersect {
      */
     public static void main(String[] args) {
         Intersect test = new Intersect();
-        int [] nums1 =new int[]{4,9,5};
-        int [] nums2 =new int[]{9,4,9,8,4};
+        int[] nums1 = new int[]{4, 9, 5};
+        int[] nums2 = new int[]{9, 4, 9, 8, 4};
         int[] res = test.intersect1(nums1, nums2);
         for (int i = 0; i < res.length; i++) {
             System.out.println(res[i]);
@@ -35,15 +35,14 @@ public class Intersect {
      *
      * @param nums1
      * @param nums2
-     * @return
-     * 思路：先数组排序遍历， 两个同时遍历，小的一方相加，相等则添加到数组中
+     * @return 思路：先数组排序遍历， 两个同时遍历，小的一方相加，相等则添加到数组中
      */
     public int[] intersect2(int[] nums1, int[] nums2) {
         List<Integer> list = new ArrayList<>();
         Arrays.sort(nums1);
         Arrays.sort(nums2);
-        int i=0, j=0;
-        while (i<nums1.length && j <nums2.length) {
+        int i = 0, j = 0;
+        while (i < nums1.length && j < nums2.length) {
             if (nums1[i] < nums2[j]) {
                 i++;
             } else if (nums1[i] > nums2[j]) {
@@ -71,7 +70,7 @@ public class Intersect {
         while (i < nums1.length && j < nums2.length) {
             if (nums1[i] < nums2[j]) {
                 i++;
-            } else if(nums1[i] > nums2[j]) {
+            } else if (nums1[i] > nums2[j]) {
                 j++;
             } else {
                 list.add(nums1[i]);
@@ -90,25 +89,25 @@ public class Intersect {
 
     /**
      * 思路1: 使用map 实现数据遍历nums1中的所有元素，把它存放到map中，其中key就是nums1中的元素，value就是这个元素在数组nums1中出现的次数。
- *           遍历nums2中的所有元素，查看map中是否包含nums2的元素，如果包含，就把当前值加入到集合list中，然后对应的value要减1。
+     * 遍历nums2中的所有元素，查看map中是否包含nums2的元素，如果包含，就把当前值加入到集合list中，然后对应的value要减1。
+     *
      * @param nums1
      * @param nums2
-     * @return
-     * 暴力破解法，双重循环不行， 如果nums1[2]， nums2[2,2] 这样返回的数据不好判断
+     * @return 暴力破解法，双重循环不行， 如果nums1[2]， nums2[2,2] 这样返回的数据不好判断
      */
     public int[] intersect1(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> map = new HashMap<>();
         ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < nums1.length; i++) {
-            map.put(nums1[i], map.getOrDefault(nums1[i], 0)+1);
+            map.put(nums1[i], map.getOrDefault(nums1[i], 0) + 1);
         }
 
         for (int i = 0; i < nums2.length; i++) {
             // 存在有交集
-            if (map.getOrDefault(nums2[i], 0) >0) {
+            if (map.getOrDefault(nums2[i], 0) > 0) {
                 list.add(nums2[i]);
-                map.put(nums2[i], map.get(nums2[i])-1);
+                map.put(nums2[i], map.get(nums2[i]) - 1);
             }
         }
         // 交集数据取出后， 转为数组

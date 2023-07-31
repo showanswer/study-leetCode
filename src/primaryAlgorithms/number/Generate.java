@@ -24,6 +24,7 @@ public class Generate {
 
     /**
      * numRows = 5=> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]; numRows = 1=> [[1]];
+     *
      * @param numRows
      * @return
      */
@@ -35,7 +36,7 @@ public class Generate {
         for (int i = 0; i < numRows; i++) {
             //下面一行都会比上面一行多一个元素，我们在第一个位置给他加个1
             row.add(0, 1);
-            for (int j = 1; j < row.size()-1; j++) {
+            for (int j = 1; j < row.size() - 1; j++) {
                 row.set(j, row.get(j) + row.get(j + 1));
             }
             //把结果存放到res中
@@ -46,6 +47,7 @@ public class Generate {
 
     /**
      * 思路：
+     *
      * @param numRows
      * @return
      */
@@ -56,9 +58,9 @@ public class Generate {
         List<Integer> row = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             //下面一行都会比上面一行多一个元素，我们在第一个位置给他加个1
-            row.add(0,1);
-            for (int j = 1; j < row.size()-1; j++) {
-                row.set(j, row.get(j)+row.get(j+1));
+            row.add(0, 1);
+            for (int j = 1; j < row.size() - 1; j++) {
+                row.set(j, row.get(j) + row.get(j + 1));
             }
             //把结果存放到res中
             res.add(new ArrayList<>(row));

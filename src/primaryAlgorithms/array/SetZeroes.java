@@ -43,7 +43,7 @@ public class SetZeroes {
         // 给行赋值0
         for (int i = 0; i < row.length; i++) {
             for (int j = 0; j < length1; j++) {
-                if (row[i] ==1 || column[j]==1) {
+                if (row[i] == 1 || column[j] == 1) {
                     matrix[i][j] = 0;
                 }
             }

@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * <p>
- *  括号生成
+ * 括号生成
  * </p>
  *
  * @author answer
@@ -23,6 +23,7 @@ public class GenerateParenthesis {
 
     /**
      * n = 3
+     *
      * @param n
      * @return
      */
@@ -31,8 +32,9 @@ public class GenerateParenthesis {
         dfs(res, n, n, "");
         return res;
     }
+
     private void dfs(List<String> res, int left, int right, String curStr) {
-        if (left ==0 && right ==0) {
+        if (left == 0 && right == 0) {
             res.add(curStr);
             return;
         }
@@ -43,8 +45,8 @@ public class GenerateParenthesis {
         if (right < left) {
             return;
         }
-        dfs(res, left -1, right, curStr+"(");
-        dfs(res, left, right-1, curStr+")");
+        dfs(res, left - 1, right, curStr + "(");
+        dfs(res, left, right - 1, curStr + ")");
     }
 
 

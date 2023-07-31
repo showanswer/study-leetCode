@@ -18,13 +18,14 @@ public class BuildTree {
      */
     public static void main(String[] args) {
         BuildTree test = new BuildTree();
-        int[] preorder = {3,9,20,15,7};
-        int[] inorder = {9,3,15,20,7};
+        int[] preorder = {3, 9, 20, 15, 7};
+        int[] inorder = {9, 3, 15, 20, 7};
         test.buildTree(preorder, inorder);
     }
 
     /**
      * preorder = [3,9,20,15,7], inorder = [9,3,15,20,7] => [3,9,20,null,null,15,7]
+     *
      * @return
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {

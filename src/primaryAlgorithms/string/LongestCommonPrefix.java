@@ -10,17 +10,19 @@ public class LongestCommonPrefix {
     /**
      * 编写一个函数来查找字符串数组中的最长公共前缀。
      * 如果不存在公共前缀，返回空字符串 ""。
+     *
      * @param args
      */
     public static void main(String[] args) {
         LongestCommonPrefix test = new LongestCommonPrefix();
-        String [] strings = new String[]{"flower","flow","sfolight"};
+        String[] strings = new String[]{"flower", "flow", "sfolight"};
         String prefix = test.longestCommonPrefix2(strings);
         System.out.println(prefix);
     }
 
     /**
      * strs = ["flower","flow","flight"] => "fl"; strs = ["dog","racecar","car"] => ""
+     *
      * @param strs
      * @return
      */
@@ -29,10 +31,10 @@ public class LongestCommonPrefix {
             return "";
         }
         String res = strs[0];
-        int i=1;
-        while (i<strs.length) {
-            while (strs[i].indexOf(res) !=0) {
-                res = res.substring(0, res.length()-1);
+        int i = 1;
+        while (i < strs.length) {
+            while (strs[i].indexOf(res) != 0) {
+                res = res.substring(0, res.length() - 1);
             }
             i++;
         }
@@ -46,10 +48,10 @@ public class LongestCommonPrefix {
         String pre = strs[0];
         int i = 1;
         // 数组截取
-        while (i<strs.length) {
+        while (i < strs.length) {
             // 每个字符减小 匹配
             while (strs[i].indexOf(pre) != 0) {
-                pre = pre.substring(0, pre.length()-1);
+                pre = pre.substring(0, pre.length() - 1);
             }
             i++;
         }
@@ -58,9 +60,9 @@ public class LongestCommonPrefix {
 
     /**
      * strs = ["flower","flow","flight"] => "fl"; strs = ["dog","racecar","car"] => ""
+     *
      * @param strs
-     * @return
-     * 思路：
+     * @return 思路：
      */
     public String longestCommonPrefix1(String[] strs) {
         int length = strs.length;
@@ -68,10 +70,10 @@ public class LongestCommonPrefix {
             return "";
         }
         String pre = strs[0];
-        int i =1;
-        while (i< length) {
-            while (strs[i].indexOf(pre) != 0 ) {
-                pre = pre.substring(0, pre.length()-1);
+        int i = 1;
+        while (i < length) {
+            while (strs[i].indexOf(pre) != 0) {
+                pre = pre.substring(0, pre.length() - 1);
             }
             i++;
         }

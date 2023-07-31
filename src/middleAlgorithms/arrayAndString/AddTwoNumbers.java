@@ -8,7 +8,7 @@ package middleAlgorithms.arrayAndString;
 public class AddTwoNumbers {
 
     public static class ListNode {
-       public int val;
+        public int val;
         public ListNode next;
 
         ListNode() {

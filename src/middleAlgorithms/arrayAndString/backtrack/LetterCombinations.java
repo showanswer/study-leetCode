@@ -26,19 +26,19 @@ public class LetterCombinations {
     public List<String> letterCombinations(String digits) {
         // 队列 先进先出
         LinkedList<String> res = new LinkedList<>();
-        if (digits ==null || digits.length() ==0) {
-            return  res;
+        if (digits == null || digits.length() == 0) {
+            return res;
         }
 
-        char[][] tb = {{'a', 'b','c'},{'d', 'e','f'},{'g', 'h','i'},
-                {'j', 'k','l'},{'m', 'n','o'},{'p', 'q','r','s'},{'t', 'u','v'},{'w', 'x','y','z'}};
+        char[][] tb = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'},
+                {'j', 'k', 'l'}, {'m', 'n', 'o'}, {'p', 'q', 'r', 's'}, {'t', 'u', 'v'}, {'w', 'x', 'y', 'z'}};
 
         res.add("");
         while (res.peek().length() != digits.length()) {
             String remove = res.poll();
             char[] chars = tb[digits.charAt(remove.length()) - '2'];
             for (int i = 0; i < chars.length; i++) {
-                res.add(remove+chars[i]);
+                res.add(remove + chars[i]);
             }
         }
         return res;

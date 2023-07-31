@@ -21,12 +21,12 @@ public class E0154_PostorderTraversal {
 
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        postHelper(root,res);
+        postHelper(root, res);
         return res;
     }
 
     private void postHelper(TreeNode root, List<Integer> res) {
-        if (root ==null) {
+        if (root == null) {
             return;
         }
         postHelper(root.left, res);
