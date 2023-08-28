@@ -17,18 +17,38 @@ public class E0258_AddDigits {
     }
 
     /**
+     * 思路： 个数相加 % 和 / 得到末尾数字，如果相加后得到的还是 >10 则再次判断进行循环则 while
+     * @param num
+     * @return
+     *   38
+     * num 个数都相加了，累加的和 还是 >10
+     */
+    public int addDigits(int num) {
+        int sum =num;
+        while (sum >= 10) {
+           sum =0;
+           while ( num > 0) {
+               sum += num % 10;
+               num = num / 10;
+           }
+           num = sum ;
+        }
+        return sum;
+    }
+
+    /**
      *
      * @param num
      * @return
      */
-    public int addDigits(int num) {
-        while (num>= 10) {
+    public int addDigits1(int num) {
+        while (num >= 10) {
             int sum =0;
-            while (num >0 ) {
-                sum += sum % 10;
+            while (num >0) {
+                sum += num % 10;
                 num = num /10;
             }
-            return sum;
+            num = sum;
         }
         return num;
     }
