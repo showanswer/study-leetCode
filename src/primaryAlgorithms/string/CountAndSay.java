@@ -16,6 +16,7 @@ public class CountAndSay {
      * @param args
      */
     public static void main(String[] args) {
+        System.out.println("1");
         CountAndSay test = new CountAndSay();
         String s = test.countAndSay1(4);
         System.out.println(s);
