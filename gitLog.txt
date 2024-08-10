@@ -8,6 +8,4 @@ git log   => 查看提交信息， 提交人提交文件， 提交时间
 git merge dev => 合并分支， 把dev代码分支 合并到当前分支上。 不会影响dev分支代码git status => 查看当前分支状态
 git push study-leetCode master => 上传代码 git push 仓库 分支
 
-
-TEST 20240810
 以上常用命令 仅作参考具体的还需要百度搜索!!!
